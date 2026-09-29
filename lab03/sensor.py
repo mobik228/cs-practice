@@ -13,7 +13,7 @@ for i in range(n):
         indication = float(indication)
         cnt += 1
         avg += indication
-        if indication >= threshold:
+        if indication > threshold:
             exceeding += 1
         if indication > mx:
             mx = indication
