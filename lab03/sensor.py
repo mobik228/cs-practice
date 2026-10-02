@@ -1,29 +1,32 @@
-threshold = int(input())
+
+
+threshold = float(input())
 n = int(input())
+
 cnt_error = 0
 exceeding = 0
-avg = 0
-cnt = 0
-mx = 0
+total_sum = 0
+cnt_valid = 0
+mx = -float("inf")
+
 for i in range(n):
     indication = input()
-    if indication == 'error':
+    if indication == "error":
         cnt_error += 1
     else:
-        indication = float(indication)
-        cnt += 1
-        avg += indication
-        if indication > threshold:
+        temp = float(indication)
+        cnt_valid += 1
+        total_sum += temp
+        
+        if temp > threshold:
             exceeding += 1
-        if indication > mx:
-            mx = indication
-h = avg/cnt
+        if temp > mx:
+            mx = temp
+
+avg = total_sum / cnt_valid
+
 print(n)
 print(cnt_error)
-print(exceeding )
+print(exceeding)
 print(f"{mx:.1f}")
-print(f"{h:.1f}")
-
-        
-
-        
+print(f"{avg:.1f}")
