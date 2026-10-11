@@ -1,21 +1,32 @@
+def winner(names: list[str], scores: list[float]) -> str:
+    best_i = 0
+    for i in range(len(scores)):
+        if scores[i] > scores[best_i]:
+            best_i = i
+    return names[best_i]
+
+
 def average(scores: list[float]) -> float:
-    if not scores:
+    if len(scores) == 0:
         return 0.0
     return round(sum(scores) / len(scores), 2)
 
 
-def winner(names: list[str], scores: list[float]) -> str:
-    best_index = 0
-    for i in range(1, len(scores)):
-        if scores[i] > scores[best_index]:
-            best_index = i
-    return names[best_index]
-
-
-def ranking(names: list[str], scores: list[float]) -> list[str] associations:
-    sorted_pairs = sorted(zip(names, scores), key=lambda pair: pair[1], reverse=True)
-    return [name for name, _ in sorted_pairs]
+def ranking(names: list[str], scores: list[float]) -> list[str]:
+    pairs = []
+    for i in range(len(names)):
+        pairs.append((scores[i], names[i]))
+    pairs.sort(key=lambda x: x[0], reverse=True)
+    result = []
+    for pair in pairs:
+        result.append(pair[1])
+    return result
 
 
 def above_average(names: list[str], scores: list[float]) -> list[str]:
-    return [name for name, score in zip(names, scores) if score > avg_score]
+    avg = average(scores)
+    result = []
+    for i in range(len(names)):
+        if scores[i] > avg:
+            result.append(names[i])
+    return result
