@@ -30,3 +30,11 @@ def above_average(names: list[str], scores: list[float]) -> list[str]:
         if scores[i] > avg:
             result.append(names[i])
     return result
+
+
+
+if __name__ == '__main__':
+    names =  ["Аня", "Боря", "Вика"]
+    scores = [7.0,   9.0,    8.5]
+    print(above_average(names, scores))
+    

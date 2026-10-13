@@ -22,8 +22,10 @@ for i in range(n):
             exceeding += 1
         if temp > mx:
             mx = temp
-
-avg = total_sum / cnt_valid
+if  cnt_valid != 0:
+    avg = total_sum / cnt_valid
+else:
+    avg = 0
 
 print(n)
 print(cnt_error)
