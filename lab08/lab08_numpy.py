@@ -42,3 +42,12 @@ print(changed_hours)
 changed_hours[1:4] = 99
 changed_hours[::2] = -1
 print(changed_hours)
+print('------matrix----------------')
+changed_matrix = matrix.copy()
+print(changed_matrix)
+changed_matrix[1:2, :] = 0
+changed_matrix[:, -1:] = -1
+changed_matrix[1:4, 1:4] = 100
+print(changed_matrix)
+#.copy(): в NumPy срезы не создают новый массив, а возвращают представление (view) — ссылку на ту же самую область памяти
+print('---------------задание 6 ____________')
