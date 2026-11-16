@@ -11,3 +11,7 @@ print(hours.shape)
 print(hours.ndim)
 print(hours.size)
 print(hours.dtype)
+# задание 2
+print(f"третий элемент {hours[2]}, последний элемент {hours[-1]}, элементы с индексами 2–5 {hours[1:5]},"
+      f"массив в обратном порядке {hours[::-1]}, каждый второй элемент {hours[::2]}")
+# задание 3
