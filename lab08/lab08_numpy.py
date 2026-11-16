@@ -51,3 +51,10 @@ changed_matrix[1:4, 1:4] = 100
 print(changed_matrix)
 #.copy(): в NumPy срезы не создают новый массив, а возвращают представление (view) — ссылку на ту же самую область памяти
 print('---------------задание 6 ____________')
+numbers = np.arange(0, 12)
+table = numbers.reshape(3, 4)
+transposed = table.T
+print(numbers)
+print(table)
+print(transposed)
+# 3 * 4 = 12 а 5 * 3 = 15
